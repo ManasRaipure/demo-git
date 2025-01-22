@@ -13,8 +13,10 @@ import in.pinnacle.model.Emp;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
+ 
 
 @Controller
 public class EmpController {
@@ -29,5 +31,12 @@ public class EmpController {
             empList.set(emp.getId(), emp);
             return "redirect:/emp";
             }
+            @PostMapping("/emp")
+            public String addEmp(@RequestBody Emp emp) {
+                empList.add(emp);
+                return "redirect:/emp";
+            }
+           
+            
     
 }
