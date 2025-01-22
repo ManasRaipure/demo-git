@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,10 +15,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-
- 
-
 @Controller
 public class EmpController {
     List <Emp> empList = new ArrayList<>();
@@ -36,7 +33,12 @@ public class EmpController {
                 empList.add(emp);
                 return "redirect:/emp";
             }
+            // @DeleteMapping
+            // public String deleteEmp(@RequestParam("id") int id) {
+            //     empList.removeIf(e -> e.getId() == id);
+            //     return "redirect:/emp";
+            //     }
+
            
-            
     
 }
